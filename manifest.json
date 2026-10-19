@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "PEDOBLOX",
+  "version": "2.1.0",
+  "description": "Replaces the Roblox logo on roblox.com with the PEDOBLOX logo (logo.png).",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "PEDOBLOX",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.roblox.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["logo.png"],
+      "matches": ["*://*.roblox.com/*"]
+    }
+  ]
+}
